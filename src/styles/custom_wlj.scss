@@ -1,0 +1,44 @@
+/* Variables */
+
+// Base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$blue:#3370FF;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$orange: #ff6a00;
+
+//Topbar
+$topBarHeight: 60px;
+
+//TagsView
+$tagsViewHeight: 34px;
+
+// Sidebar
+$sideBarWidth: 210px;
+$subMenuBg:#ffffff;
+$subMenuHover:rgb(204,204,204);
+$subMenuActiveText:#71b6fc; //子菜单触发时，顶层的颜色
+//$menuBg:#304156;
+$menuBg:#3c4a73;
+$menuText:#6d747c;
+$menuActiveText:#409EFF; // Also see settings.sidebarTextTheme
+
+// Login page
+$lightGray: #eee;
+$darkGray:#889aa4;
+$loginBg: #eff5f9;
+$loginCursorColor: #fff;
+
+// The :export directive is the magic sauce for webpack
+// https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
+:export {
+  menuBg: $menuBg;
+  subMenuBg: $subMenuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+}
