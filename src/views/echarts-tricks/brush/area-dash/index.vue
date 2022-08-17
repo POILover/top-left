@@ -6,7 +6,7 @@
 
 <script>
 import { option } from "./option";
-import echarts from "echarts";
+import  * as echarts from "echarts";
 import resize from "../../mixin/resize";
 export default {
   name: "AreaDash",

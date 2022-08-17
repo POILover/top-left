@@ -7,7 +7,7 @@
 <script>
 import { option } from "./option";
 import { data1, data2 } from "../data";
-import echarts from "echarts";
+import  * as echarts from "echarts";
 import resize from "../../mixin/resize";
 
 export default {

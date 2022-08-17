@@ -149,6 +149,14 @@ export const constantRoutes = [
           title: '放大和拖拽',
         }
       },
+      {
+        path: 'fund',
+        name: 'fund',
+        component: () => import('@/views/echarts-tricks/fund/index.vue'),
+        meta: {
+          title: '基金',
+        }
+      },
     ]
   },
   {

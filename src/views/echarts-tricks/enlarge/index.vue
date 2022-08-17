@@ -47,7 +47,7 @@
 // TODO: 优化样式或制造应用场景，添加注释，转为mixin
 import customDrag from "@/directive/custom-drag/index";
 import { option } from "./option";
-import echarts from "echarts";
+import  * as echarts from "echarts";
 export default {
   name: "Linear",
   directives: { customDrag },
