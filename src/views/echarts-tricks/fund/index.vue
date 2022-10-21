@@ -1,20 +1,18 @@
 <template>
     <div class="app-container">
         <div style="display: flex; flex-wrap: wrap; width: 100%">
-            <div
-                :id="`chart${i}`"
-                style="width: 500px; height: 400px"
-                v-for="i in 10"
-                :key="i"
-            ></div>
+            <div :id="`chart1`" style="width: 100%; height: 400px; margin: 0 20px 20px 0"></div>
+            <div :id="`chart2`" style="width: 100%; height: 400px; margin: 0 20px 20px 0"></div>
         </div>
     </div>
 </template>
 
 <script>
-import { option } from "./option";
+import { option1, option2 } from "./option";
 import * as echarts from "echarts";
-const orginData = require("./data.json");
+const orginData = require("./data.json")
+    .filter((_, index) => index > -1)
+    .map(item => item.split(","));
 export default {
     name: "Fund",
     data() {
@@ -30,17 +28,14 @@ export default {
     },
     methods: {
         drawChart() {
-            this.option = option;
-            for (let i = 1; i < 2; i++) {
-                let chart = echarts.init(document.getElementById(`chart${i}`));
-                const [series0Data, xData] = this.handleData(orginData[0].data);
-                this.option.xAxis.data = xData;
-                this.option.series[0].data = series0Data;
-                console.log(this.option);
-                chart.setOption(this.option);
-                // this.chart = echarts.init(this.$refs.chart);
-                // this.chart.setOption(this.option);
-            }
+            let chart1 = echarts.init(document.getElementById(`chart1`));
+            option1.xAxis.data = orginData.map(item => item[0]);
+            option1.series[0].data = orginData.map(item => Number(item[5]));
+            option1.series[1].data = orginData.map(item => Number(item[11]));
+            chart1.setOption(option1);
+        },
+        handleNum(num) {
+            return num / 10e8;
         },
         handleData(data, base = 1) {
             let xData = data.map(item => item.date);

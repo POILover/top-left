@@ -4,6 +4,7 @@
       <div class="mini-component">
         <hover-button></hover-button>
         <image-uploader></image-uploader>
+        <test />
       </div>
     </div>
   </div>
@@ -12,9 +13,10 @@
 <script>
 import HoverButton from "./components/HoverButton.vue";
 import ImageUploader from "./components/ImageUploader.vue";
+import Test from "./components/test.vue";
 export default {
   name: "MiniComponents",
-  components: { HoverButton, ImageUploader }
+  components: { HoverButton, ImageUploader, Test }
 };
 </script>
 <style lang="scss" scoped>
@@ -22,8 +24,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   .mini-component {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    // height: 200px;
   }
 }
 .circle-btn-wrapper {
